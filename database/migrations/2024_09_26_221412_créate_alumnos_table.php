@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('apellido');
             $table->string('email')->unique();
             $table->integer('edad');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
