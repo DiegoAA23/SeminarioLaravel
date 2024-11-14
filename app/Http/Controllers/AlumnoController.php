@@ -38,12 +38,13 @@ class AlumnoController extends Controller
         ]);
         Alumno::create([
             'nombre' => $request->name,
-            'apellido' => $request->apellido,
+            'apellido' => $request->lastname,
             'email' => $request->email,
-            'edad' => $request->edad,
+            'edad' => $request->age,
         ]);
         return redirect()->route('alumnos.index')
                          ->with('success', 'Item created successfully.');
+
     }
 
     /**
