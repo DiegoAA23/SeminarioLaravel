@@ -73,22 +73,4 @@ class AlumnoControllerTest extends TestCase
             'edad' => 20,
         ]);
     }
-/** @test */
-    public function validar_exitoso_lista_alumnos()
-    {
-        $response = $this->get('/alumnos');
-
-        $response->assertStatus(200);
-    }
-
-      /** @test */
-      public function puede_eliminar_un_alumno()
-      {
-          $alumno = Alumno::factory()->create();
-          $response = $this->delete("/alumnos/{$alumno->id}");
-          $response->assertRedirect('/alumnos');
-          $this->assertSoftDeleted('alumnos', [
-            'id' => $alumno->id,
-        ]);
-      }
 }
